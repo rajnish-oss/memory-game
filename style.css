@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+ES+Deco+Guides&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+ES+Deco+Guides&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Ysabeau+SC:wght@1..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Agu+Display:MORF@0..60&family=Playwrite+ES+Deco+Guides&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Ysabeau+SC:wght@1..1000&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #89A8B2;
+}
+
+.heading{
+    display: flex;
+    justify-content: center;
+    
+}
+
+.heading h1{
+   font-family: 'Roboto Mono', serif;
+   color: #F1F0E8;
+}
+
+.border{
+    height: 4px;
+    width: 100vw;
+    background-color:#F1F0E8;
+    position: fixed;
+    top: 40px;
+}
+
+.main{
+    height: 90vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    height: 42vh;
+    width: 59vw;
+    background-image: url(media/petal.jpg);
+    display: grid;
+    grid-template-columns: 120px;
+    grid-template-rows: 95px 95px 3fr;
+    grid-auto-flow: column;
+    perspective: 800px;
+}
+
+@keyframes flip{
+    0%{
+        transform: rotateY(0deg);
+    }
+    50%{
+        transform: rotateY(45deg);
+    }
+    100%{
+        transform: rotateY(90deg);
+    }
+}
+
+.card{
+    height: 100px;
+    width: 100px;
+    padding: 10px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease;
+    cursor: pointer;
+}
+
+.face{
+    height: 80px;
+    width: 80px;
+    background-image: #F1F0E8;
+    visibility: hidden;
+    z-index: 1000;
+}
+
+.face.display{
+    visibility: visible;
+    position: relative;
+    z-index: 1000;
+}
+
+.back{
+    height: 80px;
+    width: 80px;
+    background-image: url("media/Flip.png");
+    position: relative;
+    bottom: 84px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 15px;
+    z-index: 10;
+}
+
+.card.flipped{
+    transform: rotateY(180deg);
+}
+
+.popup{
+    height: 100vh;
+    width: 100vw;
+    justify-content: center;
+    text-align: center;
+    position: fixed;
+    z-index: 2000;
+    font-family: "Playwrite España Decorativa Guides", serif;
+    /* transform: translate(-50%, -50%); */
+    background-color: rgba(0, 0, 0, 0.5);
+    top: 0px;
+    display: none;
+}
+
+.popup h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40vh;
+    width: 40vw;
+    color: #F1F0E8;
+    font-size: 50px;
+    margin-top: 20px;
+    position: relative;
+    align-self: center;
+    background: linear-gradient(129deg,rgb(103, 62, 62),#8D0B41,rgb(103, 62, 62));
+    right: -3vw;
+    border-radius:12px ;
+}
+
+.popup button{
+    height: 50px;
+    width: 100px;
+    border-radius: 12px;
+    position: relative;
+    align-self: center;
+    bottom: -28vh;
+    right: 20vw;
+    
+}
+
+.sound img{
+   height: 40px;
+   width: 40px;
+   position: fixed;
+   right: 10px;
+   top: 50px;
+}
+
+.hidden{
+    display: none;
+}
+
+#off{
+    display: none;
+}
+
+#on{
+    display: flex;
+}
